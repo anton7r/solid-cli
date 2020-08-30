@@ -1,9 +1,10 @@
 [
     {
-        "repo": "",
-        "description": "",
+        "repo": "example",
+        "description": "this is the description",
         "features": [
-            ""
+            "tiny config",
+            "rollup"
         ]
     }
 ]

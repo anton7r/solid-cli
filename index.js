@@ -3,7 +3,7 @@ const degit = require("degit");
 const templates = require("./templates");
 const chalk = require("chalk");
 
-console.log(chalk.cyanBright("solid-cli") + chalk.gray("@" + require("./package.json").version))
+console.log(chalk.cyanBright("solid-cli") + chalk.gray("@" + require("./package.json").version) + "\n")
 
 const args = process.argv.splice(2);
 
@@ -14,10 +14,25 @@ const usages = {
     }
 }
 
+function successMessage(appName, template) {
+    console.log(
+        `\n` + chalk.green("SUCCESS:") + ` The setup is now complete for '${appName}' with the '${template}' template` +
+        `\n\n` +
+        `You may now run the following commands:` +
+        `\n\n` +
+        `  cd ${appName}` +
+        `\n` +
+        `  npm start` +
+        `\n\n\n\n` +
+        `Happy coding!`
+    );
+}
+
 switch (args[0]) {
+
     case "create": {
-        const template = args.lenght === 2 ? undefined : args[1];
-        const appName = args.lenght === 2 ? args[1] : args[2];
+        const template = args.length === 2 ? undefined : args[1];
+        const appName = args.length === 2 ? args[1] : args[2];
 
         if(!appName) {
             console.log(
@@ -28,12 +43,7 @@ switch (args[0]) {
             return;
         }
 
-        //TODO: if no template is provided show the user the form to create a custom setup
-        if(!template) {
-            
-            return;
-        }
-
+        //checks wether the user inputted template exists in the templates
         const isTemplateFound = templates.findIndex((val => {
             return val.repo === template
         }))
@@ -48,19 +58,57 @@ switch (args[0]) {
         const emitter = degit(template)
 
 
+        emitter.clone(appName).then(() => successMessage(appName, template))
+
         break;
     
     }
+
+
     case "templates":
+
+        //gets the longest's repos name so that the text can be formatted correctly
+        var spaces = 0;
+        templates.forEach(template => {
+            const len = template.repo.length;
+            if(spaces < len) spaces = len;
+        })
+
+        spaces += 2;
+
+        var rendered = "";
+
+        templates.forEach(template => {
+            rendered += `  ${template.repo}`;
+
+            //format spaces
+            var s = "";
+            for(var i = 0; i < (spaces - template.repo.length); i++) s += " ";
+            rendered += s
+
+            rendered += template.description  + `\n`;
+
+            //format spaces for features
+            var s2 = "  ";
+            for(var i = 0; i < spaces; i++) s2 += " ";
+
+            template.features.forEach(feature => {
+                rendered += s2 + " - " + feature + "\n";
+            })
+            rendered += "\n";
+        });
+        
         console.log(
-            `\n` +
-            `Templates:`
+            `Templates:` +
+            `\n\n` +
+            rendered
         )
         break;
 
+
     default:
+
         console.log(
-            `\n` +
             `Usage: solid <command> [options]` +
             `\n\n` +
             `Commands:` +
