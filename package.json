@@ -1,0 +1,32 @@
+{
+  "name": "create-solid-app",
+  "version": "0.0.1",
+  "description": "Scaffolds your solid-js project",
+  "main": "index.js",
+  "bin": {
+    "solid": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "degit": "^2.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anton7r/create-solid-app.git"
+  },
+  "keywords": [
+    "solid-js",
+    "solid",
+    "create-solid-app"
+  ],
+  "author": "anton7r",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anton7r/create-solid-app/issues"
+  },
+  "homepage": "https://github.com/anton7r/create-solid-app#readme"
+}
