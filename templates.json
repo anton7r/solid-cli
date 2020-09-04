@@ -1,10 +1,23 @@
 [
     {
-        "repo": "example",
-        "description": "this is the description",
-        "features": [
-            "tiny config",
-            "rollup"
-        ]
+        "name": "vite",
+        "repo": "amoutonbrady/vite-template-solid/js",
+        "description": "this is the description"
+    },
+    {
+        "name": "vite-ts",
+        "repo": "amoutonbrady/vite-template-solid/ts",
+        "description": "this is the description"
+    },
+    {
+        "name": "vite-ts-minimal",
+        "repo": "amoutonbrady/vite-template-solid/ts-minimal",
+        "description": "this is the description"
+    },
+    {
+        "name": "vite-ts-tailwind",
+        "repo": "amoutonbrady/vite-template-solid/ts-tailwind",
+        "description": "this is the description"
     }
+
 ]

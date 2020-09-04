@@ -8,9 +8,9 @@ console.log(chalk.cyanBright("solid-cli") + chalk.gray("@" + require("./package.
 const args = process.argv.splice(2);
 
 const usages = {
-    create: {
-        command: "create [template] <app-name>",
-        description: "creates a new project from a template"
+    init: {
+        command: "init [template] <app-name>",
+        description: "initializes a new project from a template"
     }
 }
 
@@ -30,7 +30,7 @@ function successMessage(appName, template) {
 
 switch (args[0]) {
 
-    case "create": {
+    case "init": {
         const template = args.length === 2 ? undefined : args[1];
         const appName = args.length === 2 ? args[1] : args[2];
 
@@ -38,7 +38,7 @@ switch (args[0]) {
             console.log(
                 chalk.redBright("ERR:") + " Please give your project a name" +
                 `\n\n` +
-                `Usage: ${usages.create.command}`
+                `Usage: ${usages.init.command}`
             );
             return;
         }
@@ -67,40 +67,25 @@ switch (args[0]) {
 
     case "templates":
 
-        //gets the longest's repos name so that the text can be formatted correctly
-        var spaces = 0;
-        templates.forEach(template => {
-            const len = template.repo.length;
-            if(spaces < len) spaces = len;
-        })
-
-        spaces += 2;
-
         var rendered = "";
 
         templates.forEach(template => {
-            rendered += `  ${template.repo}`;
+            rendered += "\n";
 
-            //format spaces
-            var s = "";
-            for(var i = 0; i < (spaces - template.repo.length); i++) s += " ";
-            rendered += s
+            rendered += `  ${template.name}`;
 
-            rendered += template.description  + `\n`;
+            rendered += "  " + chalk.gray(template.description)  + `\n`;
 
-            //format spaces for features
-            var s2 = "  ";
-            for(var i = 0; i < spaces; i++) s2 += " ";
+            if(!template.features) return;
 
             template.features.forEach(feature => {
-                rendered += s2 + " - " + feature + "\n";
+                rendered += "   - " + feature + "\n";
             })
-            rendered += "\n";
         });
         
         console.log(
             `Templates:` +
-            `\n\n` +
+            `\n` +
             rendered
         )
         break;
@@ -113,7 +98,7 @@ switch (args[0]) {
             `\n\n` +
             `Commands:` +
             `\n` +
-            `  ${usages.create.command}  ${usages.create.description}` +
+            `  ${usages.init.command}    ${usages.init.description}` +
             `\n` +
             `  templates                     shows the available templates`
         )
