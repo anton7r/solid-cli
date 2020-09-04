@@ -2,22 +2,22 @@
     {
         "name": "vite",
         "repo": "amoutonbrady/vite-template-solid/js",
-        "description": "this is the description"
+        "description": "featureful javascript integration for vite"
     },
     {
         "name": "vite-ts",
         "repo": "amoutonbrady/vite-template-solid/ts",
-        "description": "this is the description"
+        "description": "featureful typescript integration for vite"
     },
     {
         "name": "vite-ts-minimal",
         "repo": "amoutonbrady/vite-template-solid/ts-minimal",
-        "description": "this is the description"
+        "description": "bare minimum typescript integration for vite"
     },
     {
         "name": "vite-ts-tailwind",
         "repo": "amoutonbrady/vite-template-solid/ts-tailwind",
-        "description": "this is the description"
+        "description": "tailwind and typescript integration for vite"
     }
 
 ]
