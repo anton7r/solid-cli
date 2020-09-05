@@ -73,7 +73,7 @@ function templateQuery() {
             }
 
             //the template was found - continue
-            const emitter = degit(templateObj);
+            const emitter = degit(templateObj.repo);
 
             emitter.on("warn", m => {
                 console.log(chalk.yellow("WARN: " + m.message))
