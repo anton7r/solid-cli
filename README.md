@@ -10,7 +10,7 @@ Note: You dont need to update this cli in order to be able to use new templates 
 
 `solid templates` - prints all the available templates that you can choose from!
 
-`solid init <template> <name>` - initializes a project with the given template into a new folder.
+`solid init [template] <name>` - initializes a project with the given template into a new folder.
 
 ## How to add your template
 

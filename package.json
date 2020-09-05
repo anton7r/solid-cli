@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "degit": "^2.8.0"
+    "degit": "^2.8.0",
+    "enquirer": "^2.3.6"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
