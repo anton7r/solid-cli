@@ -1,10 +1,8 @@
 # solid-cli
 
-A centralized list of solidjs project templates in neat cli-tool.
+A centralized list of solidjs project templates in neat lightweight cli-tool wrapped around degit.
 
-Setup solid-js apps with a lightweight wrapper around degit.
-
-Note: You dont need to update this cli in order to be able to use new templates because the cli pulls the templates straight from this github repo and caches it on your local machine for 1 day.
+(Not yet implemented but planned) Note: You dont need to update this cli in order to be able to use new templates because the cli pulls the templates straight from this github repo and caches it on your local machine for 1 day.
 
 ## Usage
 
@@ -20,11 +18,9 @@ Note: You dont need to update this cli in order to be able to use new templates 
 
 3. Create a pull request.
 
-### Rules
+### Guidelines
 
-- If you are making a template which has
-
-- Don't add a tag to your template. Since we take care of that
+- If you are making a template which is a no-config template please add a `easy-` prefix to it
 
 - Don't remove or replace other templates from the list without an explicit reason.
 
