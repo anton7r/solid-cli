@@ -18,6 +18,10 @@
         "name": "vite-ts-tailwind",
         "repo": "amoutonbrady/vite-template-solid/ts-tailwind",
         "description": "tailwind and typescript integration for vite"
+    },
+    {
+        "name": "rollup-ts-modules",
+        "repo": "MrFoxPro/solid-rollup-boilerplate/master",
+        "description": "rollup boilerplate with typescript, scss modules, live reloading, native es modules"
     }
-
 ]
