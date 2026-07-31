@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "degit": "^2.8.0",
+    "degit": "^2.8.6",
     "enquirer": "^2.3.6"
   },
   "scripts": {
